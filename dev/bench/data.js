@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1687887040615,
+  "lastUpdate": 1687895887088,
   "repoUrl": "https://github.com/dotnet/Open-XML-SDK",
   "entries": {
     "Validation": [
@@ -190,6 +190,32 @@ window.BENCHMARK_DATA = {
             "value": 123092668.86363636,
             "unit": "ns",
             "range": "± 13764658.618842231"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "dotnet",
+            "username": "dotnet"
+          },
+          "committer": {
+            "name": "dotnet",
+            "username": "dotnet"
+          },
+          "id": "2be667ff626cfc0e2891db88a78048a1e1c4f814",
+          "message": "changed PresetTextWrap to PresetTextWarp",
+          "timestamp": "2023-06-27T17:02:34Z",
+          "url": "https://github.com/dotnet/Open-XML-SDK/pull/1463/commits/2be667ff626cfc0e2891db88a78048a1e1c4f814"
+        },
+        "date": 1687895875714,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "DocumentFormat.OpenXml.Benchmarks.ValidationTests.Validation",
+            "value": 126947818.2795699,
+            "unit": "ns",
+            "range": "± 25299999.112209756"
           }
         ]
       }
