@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1687882232481,
+  "lastUpdate": 1687882239316,
   "repoUrl": "https://github.com/dotnet/Open-XML-SDK",
   "entries": {
     "Validation": [
@@ -148,6 +148,42 @@ window.BENCHMARK_DATA = {
             "value": 126.15322987238567,
             "unit": "ns",
             "range": "± 1.3295781117545586"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "tasou@microsoft.com",
+            "name": "Taylor Southwick",
+            "username": "twsouthwick"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "dfd0e25d295e83087e56008087b71479b1e215f9",
+          "message": "Only update benchmark results on main (#1461)",
+          "timestamp": "2023-06-27T08:58:33-07:00",
+          "tree_id": "8962d3660fcc40d2b91d13f624010a28bd2fb841",
+          "url": "https://github.com/dotnet/Open-XML-SDK/commit/dfd0e25d295e83087e56008087b71479b1e215f9"
+        },
+        "date": 1687882237036,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "DocumentFormat.OpenXml.Benchmarks.CompiledParticle.SetItem",
+            "value": 168.58755747477213,
+            "unit": "ns",
+            "range": "± 2.85033511210874"
+          },
+          {
+            "name": "DocumentFormat.OpenXml.Benchmarks.CompiledParticle.AddToCollection",
+            "value": 141.34144120746188,
+            "unit": "ns",
+            "range": "± 5.547146710890262"
           }
         ]
       }
