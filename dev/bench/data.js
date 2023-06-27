@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1687887034502,
+  "lastUpdate": 1687887040615,
   "repoUrl": "https://github.com/dotnet/Open-XML-SDK",
   "entries": {
     "Validation": [
@@ -658,6 +658,48 @@ window.BENCHMARK_DATA = {
             "value": 1312580.2176339286,
             "unit": "ns",
             "range": "± 35492.45396060977"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "tasou@microsoft.com",
+            "name": "Taylor Southwick",
+            "username": "twsouthwick"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "9f3ddc0501b4fdbcdde2f3ee9642da66d28bf0e3",
+          "message": "Add tests for checking size of objects (#1459)",
+          "timestamp": "2023-06-27T10:16:02-07:00",
+          "tree_id": "33ce5ad276c97290c93a55696ef13c8dae7b6842",
+          "url": "https://github.com/dotnet/Open-XML-SDK/commit/9f3ddc0501b4fdbcdde2f3ee9642da66d28bf0e3"
+        },
+        "date": 1687887038234,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "DocumentFormat.OpenXml.Benchmarks.Documents.Create",
+            "value": 107970.18081989694,
+            "unit": "ns",
+            "range": "± 4187.632227358815"
+          },
+          {
+            "name": "DocumentFormat.OpenXml.Benchmarks.Documents.CreateNoSave",
+            "value": 111003.5627092634,
+            "unit": "ns",
+            "range": "± 1862.8959627187905"
+          },
+          {
+            "name": "DocumentFormat.OpenXml.Benchmarks.Documents.ReadFile",
+            "value": 2563955.672286184,
+            "unit": "ns",
+            "range": "± 1057006.7562881988"
           }
         ]
       }
