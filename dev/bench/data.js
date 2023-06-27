@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1687898697395,
+  "lastUpdate": 1687899980774,
   "repoUrl": "https://github.com/dotnet/Open-XML-SDK",
   "entries": {
     "Validation": [
@@ -242,6 +242,32 @@ window.BENCHMARK_DATA = {
             "value": 81396242.85714285,
             "unit": "ns",
             "range": "± 217698.26347358304"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "dotnet",
+            "username": "dotnet"
+          },
+          "committer": {
+            "name": "dotnet",
+            "username": "dotnet"
+          },
+          "id": "b9cbb6dab366570fc595479cf31d6e4dff20ca58",
+          "message": "Update dependencies",
+          "timestamp": "2023-06-27T17:02:34Z",
+          "url": "https://github.com/dotnet/Open-XML-SDK/pull/1462/commits/b9cbb6dab366570fc595479cf31d6e4dff20ca58"
+        },
+        "date": 1687899970705,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "DocumentFormat.OpenXml.Benchmarks.ValidationTests.Validation",
+            "value": 122291234.83870968,
+            "unit": "ns",
+            "range": "± 26574435.100155924"
           }
         ]
       }
