@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1687900125403,
+  "lastUpdate": 1687900131677,
   "repoUrl": "https://github.com/dotnet/Open-XML-SDK",
   "entries": {
     "Validation": [
@@ -984,6 +984,48 @@ window.BENCHMARK_DATA = {
             "value": 1928072.0863970588,
             "unit": "ns",
             "range": "± 1129837.7188926963"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "tomjebo@microsoft.com",
+            "name": "Tom Jebo",
+            "username": "tomjebo"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "67c906d67bc4ba95ac34a1652e0ab16a44f689ab",
+          "message": "changed PresetTextWrap to PresetTextWarp (#1463)\n\n* changed PresetTextWrap to PresetTextWarp\r\n* miscellaneous spell check corrections",
+          "timestamp": "2023-06-27T13:56:55-07:00",
+          "tree_id": "827bf410a0eccf776c5bbce60b68602f13493ba5",
+          "url": "https://github.com/dotnet/Open-XML-SDK/commit/67c906d67bc4ba95ac34a1652e0ab16a44f689ab"
+        },
+        "date": 1687900128632,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "DocumentFormat.OpenXml.Benchmarks.Documents.Create",
+            "value": 81483.85061710438,
+            "unit": "ns",
+            "range": "± 3171.8380805848838"
+          },
+          {
+            "name": "DocumentFormat.OpenXml.Benchmarks.Documents.CreateNoSave",
+            "value": 84272.93701171875,
+            "unit": "ns",
+            "range": "± 444.8227299328397"
+          },
+          {
+            "name": "DocumentFormat.OpenXml.Benchmarks.Documents.ReadFile",
+            "value": 1221094.8852539062,
+            "unit": "ns",
+            "range": "± 8633.707817984923"
           }
         ]
       }
