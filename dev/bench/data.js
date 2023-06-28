@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1687982617448,
+  "lastUpdate": 1687982620545,
   "repoUrl": "https://github.com/dotnet/Open-XML-SDK",
   "entries": {
     "Validation": [
@@ -2660,6 +2660,42 @@ window.BENCHMARK_DATA = {
             "value": 30.273636465980893,
             "unit": "ns",
             "range": "± 0.7891455215183361"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "tasou@microsoft.com",
+            "name": "Taylor Southwick",
+            "username": "twsouthwick"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "e2b8a44fc136515ff746deb94cb0b448e1de93c2",
+          "message": "Add DynamicallyAccessedMember attribute on FeatureCollectionBase (#1470)",
+          "timestamp": "2023-06-28T12:54:24-07:00",
+          "tree_id": "07828101d19617a1b8d8111d73c45dd6b9631e83",
+          "url": "https://github.com/dotnet/Open-XML-SDK/commit/e2b8a44fc136515ff746deb94cb0b448e1de93c2"
+        },
+        "date": 1687982618998,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "DocumentFormat.OpenXml.Benchmarks.ElementMetadataTests.CreateWithInstance",
+            "value": 26.193310494606312,
+            "unit": "ns",
+            "range": "± 0.8260131565293166"
+          },
+          {
+            "name": "DocumentFormat.OpenXml.Benchmarks.ElementMetadataTests.CreateWithGeneric",
+            "value": 37.67914932727814,
+            "unit": "ns",
+            "range": "± 1.1080663276880038"
           }
         ]
       }
