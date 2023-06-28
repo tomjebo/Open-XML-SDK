@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1687973954137,
+  "lastUpdate": 1687973956438,
   "repoUrl": "https://github.com/dotnet/Open-XML-SDK",
   "entries": {
     "Validation": [
@@ -1576,6 +1576,44 @@ window.BENCHMARK_DATA = {
             "value": 1059647.9700123856,
             "unit": "ns",
             "range": "± 55571.49974164594"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "dotnet",
+            "username": "dotnet"
+          },
+          "committer": {
+            "name": "dotnet",
+            "username": "dotnet"
+          },
+          "id": "df16907ece98a8013319d7d9863bb2b8b2d8c3be",
+          "message": "Fix a few analyzer warnings",
+          "timestamp": "2023-06-28T08:58:02Z",
+          "url": "https://github.com/dotnet/Open-XML-SDK/pull/1468/commits/df16907ece98a8013319d7d9863bb2b8b2d8c3be"
+        },
+        "date": 1687973955498,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "DocumentFormat.OpenXml.Benchmarks.Documents.Create",
+            "value": 77682.26102388822,
+            "unit": "ns",
+            "range": "± 63.741388812517506"
+          },
+          {
+            "name": "DocumentFormat.OpenXml.Benchmarks.Documents.CreateNoSave",
+            "value": 77342.03893171038,
+            "unit": "ns",
+            "range": "± 80.35096746080742"
+          },
+          {
+            "name": "DocumentFormat.OpenXml.Benchmarks.Documents.ReadFile",
+            "value": 1059286.567199707,
+            "unit": "ns",
+            "range": "± 19481.599654781494"
           }
         ]
       }
