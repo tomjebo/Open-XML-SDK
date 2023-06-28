@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1687963895971,
+  "lastUpdate": 1687963899625,
   "repoUrl": "https://github.com/dotnet/Open-XML-SDK",
   "entries": {
     "Validation": [
@@ -716,6 +716,38 @@ window.BENCHMARK_DATA = {
             "value": 123.84405215581258,
             "unit": "ns",
             "range": "± 0.7201078033721465"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "dotnet",
+            "username": "dotnet"
+          },
+          "committer": {
+            "name": "dotnet",
+            "username": "dotnet"
+          },
+          "id": "b2194abb518ed941d9de4af19938b386560378b7",
+          "message": "Add workflow to build AOT samples with summary",
+          "timestamp": "2023-06-28T08:58:02Z",
+          "url": "https://github.com/dotnet/Open-XML-SDK/pull/1465/commits/b2194abb518ed941d9de4af19938b386560378b7"
+        },
+        "date": 1687963897917,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "DocumentFormat.OpenXml.Benchmarks.CompiledParticle.SetItem",
+            "value": 179.57618101437888,
+            "unit": "ns",
+            "range": "± 3.05675083864061"
+          },
+          {
+            "name": "DocumentFormat.OpenXml.Benchmarks.CompiledParticle.AddToCollection",
+            "value": 129.98646698892117,
+            "unit": "ns",
+            "range": "± 2.502473401809223"
           }
         ]
       }
