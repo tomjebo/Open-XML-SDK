@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1687979741243,
+  "lastUpdate": 1687979743629,
   "repoUrl": "https://github.com/dotnet/Open-XML-SDK",
   "entries": {
     "Validation": [
@@ -1960,6 +1960,44 @@ window.BENCHMARK_DATA = {
             "value": 1063520.9761513157,
             "unit": "ns",
             "range": "± 22897.760590525737"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "dotnet",
+            "username": "dotnet"
+          },
+          "committer": {
+            "name": "dotnet",
+            "username": "dotnet"
+          },
+          "id": "67b947a50bb922dcfd172d567671e52a52fbb3a8",
+          "message": "Add DynamicallyAccessedMember attribute on FeatureCollectionBase",
+          "timestamp": "2023-06-28T08:58:02Z",
+          "url": "https://github.com/dotnet/Open-XML-SDK/pull/1470/commits/67b947a50bb922dcfd172d567671e52a52fbb3a8"
+        },
+        "date": 1687979742552,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "DocumentFormat.OpenXml.Benchmarks.Documents.Create",
+            "value": 80162.1797688802,
+            "unit": "ns",
+            "range": "± 361.190664843483"
+          },
+          {
+            "name": "DocumentFormat.OpenXml.Benchmarks.Documents.CreateNoSave",
+            "value": 80599.33592936197,
+            "unit": "ns",
+            "range": "± 250.27949858621653"
+          },
+          {
+            "name": "DocumentFormat.OpenXml.Benchmarks.Documents.ReadFile",
+            "value": 1049664.6504882812,
+            "unit": "ns",
+            "range": "± 20652.17855358366"
           }
         ]
       }
