@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1687996288761,
+  "lastUpdate": 1687996290769,
   "repoUrl": "https://github.com/dotnet/Open-XML-SDK",
   "entries": {
     "Validation": [
@@ -1896,6 +1896,42 @@ window.BENCHMARK_DATA = {
             "value": 109.63029034137726,
             "unit": "ns",
             "range": "± 2.019822936781685"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "tasou@microsoft.com",
+            "name": "Taylor Southwick",
+            "username": "twsouthwick"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "c027cdbcd01330f0553003f78c5c1de2e996f66d",
+          "message": "Remove unnecessary explicit System.IO.Packaging for SDK (#1471)",
+          "timestamp": "2023-06-28T16:43:54-07:00",
+          "tree_id": "344cc269def221522ac7bbae9426372603ef785c",
+          "url": "https://github.com/dotnet/Open-XML-SDK/commit/c027cdbcd01330f0553003f78c5c1de2e996f66d"
+        },
+        "date": 1687996290239,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "DocumentFormat.OpenXml.Benchmarks.CompiledParticle.SetItem",
+            "value": 138.78181485946362,
+            "unit": "ns",
+            "range": "± 1.5093758269760456"
+          },
+          {
+            "name": "DocumentFormat.OpenXml.Benchmarks.CompiledParticle.AddToCollection",
+            "value": 108.477978348732,
+            "unit": "ns",
+            "range": "± 0.862121107578578"
           }
         ]
       }
