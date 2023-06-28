@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1687964942867,
+  "lastUpdate": 1687972747267,
   "repoUrl": "https://github.com/dotnet/Open-XML-SDK",
   "entries": {
     "Validation": [
@@ -376,6 +376,36 @@ window.BENCHMARK_DATA = {
             "value": 109554168.05333333,
             "unit": "ns",
             "range": "± 488581.87080512673"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "tasou@microsoft.com",
+            "name": "Taylor Southwick",
+            "username": "twsouthwick"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "c53aa8325e95adb8f26c6b1fd8f2149e70e5c9ac",
+          "message": "Add workflow to build AOT samples with summary (#1465)",
+          "timestamp": "2023-06-28T10:10:46-07:00",
+          "tree_id": "43a8b8e58e719eaebdb71bf12ae0bc73520fe40f",
+          "url": "https://github.com/dotnet/Open-XML-SDK/commit/c53aa8325e95adb8f26c6b1fd8f2149e70e5c9ac"
+        },
+        "date": 1687972744691,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "DocumentFormat.OpenXml.Benchmarks.ValidationTests.Validation",
+            "value": 108753773.18666668,
+            "unit": "ns",
+            "range": "± 679365.7756258541"
           }
         ]
       }
