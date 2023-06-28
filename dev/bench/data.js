@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1687976902608,
+  "lastUpdate": 1687978337439,
   "repoUrl": "https://github.com/dotnet/Open-XML-SDK",
   "entries": {
     "Validation": [
@@ -510,6 +510,32 @@ window.BENCHMARK_DATA = {
             "value": 69705792.125,
             "unit": "ns",
             "range": "± 277107.153609233"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "dotnet",
+            "username": "dotnet"
+          },
+          "committer": {
+            "name": "dotnet",
+            "username": "dotnet"
+          },
+          "id": "c661f90035597877d6137703f20eea93cc38fe25",
+          "message": "Add DynamicallyAccessedMember attribute on FeatureCollectionBase",
+          "timestamp": "2023-06-28T08:58:02Z",
+          "url": "https://github.com/dotnet/Open-XML-SDK/pull/1470/commits/c661f90035597877d6137703f20eea93cc38fe25"
+        },
+        "date": 1687978334820,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "DocumentFormat.OpenXml.Benchmarks.ValidationTests.Validation",
+            "value": 90428143.6,
+            "unit": "ns",
+            "range": "± 443392.8486636096"
           }
         ]
       }
