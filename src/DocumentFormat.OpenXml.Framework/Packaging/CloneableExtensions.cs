@@ -8,11 +8,6 @@ using System.IO.Packaging;
 
 namespace DocumentFormat.OpenXml.Packaging;
 
-internal interface ICloningFeature<TPackage>
-{
-    void CopyParts(TPackage destination, OpenSettings? settings = null);
-}
-
 /// <summary>
 /// Extensions to enable package cloning.
 /// </summary>
