@@ -8,6 +8,11 @@ using System.IO.Packaging;
 
 namespace DocumentFormat.OpenXml.Packaging;
 
+internal interface ICloningFeature<TPackage>
+{
+    void CopyParts(TPackage destination, OpenSettings? settings = null);
+}
+
 /// <summary>
 /// Extensions to enable package cloning.
 /// </summary>
@@ -240,24 +245,8 @@ public static class CloneableExtensions
     private static TPackage CopyFrom<TPackage>(this TPackage destination, TPackage source, OpenSettings? settings = null)
         where TPackage : OpenXmlPackage
     {
-        lock (source.Features.GetRequired<ILockFeature>().SyncLock)
-        {
-            var existing = destination.Features.GetRequired<IPartUriFeature>();
-            destination.Features.Set<IPartUriFeature>(new CloningFeatures(existing));
-
-            source.Save();
-
-            foreach (var part in source.Parts)
-            {
-                destination.AddPart(part.OpenXmlPart, part.RelationshipId);
-            }
-
-            destination.OpenSettings = settings ?? new(source.OpenSettings);
-
-            destination.Features.Set<IPartUriFeature>(existing);
-
-            return destination;
-        }
+        source.Features.GetRequired<ICloningFeature<TPackage>>().CopyParts(destination, settings);
+        return destination;
     }
 
     internal static TPackage Reload<TPackage>(this TPackage openXmlPackage, bool? isEditable = default)
@@ -278,25 +267,57 @@ public static class CloneableExtensions
         return openXmlPackage;
     }
 
-    private sealed class CloningFeatures : IPartUriFeature
+    internal static void UseCloning<TPackage>(this TPackage package)
+        where TPackage : OpenXmlPackage
+        => package.Features.Set<ICloningFeature<TPackage>>(new DefaultCloningFeatures<TPackage>(package));
+
+    internal sealed class DefaultCloningFeatures<TPackage> : ICloningFeature<TPackage>
+        where TPackage : OpenXmlPackage
     {
-        private readonly IPartUriFeature _other;
+        private readonly TPackage source;
 
-        public CloningFeatures(IPartUriFeature other)
+        public DefaultCloningFeatures(TPackage source)
         {
-            _other = other;
+            this.source = source;
         }
 
-        Uri IPartUriFeature.CreatePartUri(string contentType, Uri parentUri, string targetPath, string targetName, string targetExt, bool forceUnique)
-            => _other.CreatePartUri(contentType, parentUri, targetPath, targetName, targetExt, forceUnique: false);
-
-        Uri IPartUriFeature.EnsureUniquePartUri(string contentType, Uri parentUri, Uri targetUri)
+        public void CopyParts(TPackage destination, OpenSettings? settings = null)
         {
-            _other.ReserveUri(contentType, targetUri);
-            return targetUri;
+            var existing = destination.Features.GetRequired<IPartUriFeature>();
+            destination.Features.Set<IPartUriFeature>(new CloningFeatures(existing));
+
+            source.Save();
+
+            foreach (var part in source.Parts)
+            {
+                destination.AddPart(part.OpenXmlPart, part.RelationshipId);
+            }
+
+            destination.OpenSettings = settings ?? new(source.OpenSettings);
+
+            destination.Features.Set<IPartUriFeature>(existing);
         }
 
-        void IPartUriFeature.ReserveUri(string contentType, Uri partUri)
-            => _other.ReserveUri(contentType, partUri);
+        private sealed class CloningFeatures : IPartUriFeature
+        {
+            private readonly IPartUriFeature _other;
+
+            public CloningFeatures(IPartUriFeature other)
+            {
+                _other = other;
+            }
+
+            Uri IPartUriFeature.CreatePartUri(string contentType, Uri parentUri, string targetPath, string targetName, string targetExt, bool forceUnique)
+                => _other.CreatePartUri(contentType, parentUri, targetPath, targetName, targetExt, forceUnique: false);
+
+            Uri IPartUriFeature.EnsureUniquePartUri(string contentType, Uri parentUri, Uri targetUri)
+            {
+                _other.ReserveUri(contentType, targetUri);
+                return targetUri;
+            }
+
+            void IPartUriFeature.ReserveUri(string contentType, Uri partUri)
+                => _other.ReserveUri(contentType, partUri);
+        }
     }
 }

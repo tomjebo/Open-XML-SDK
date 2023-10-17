@@ -51,6 +51,8 @@ internal static class PackageStorageExtensions
     {
         var compatLevel = package.OpenSettings.CompatibilityLevel;
 
+        package.UseCloning();
+        package.Features.Set<IPackageSaveFeature>(new DefaultSaveFeature(package));
         package.UseTransitionalRelationshipNamespaces();
         package.IgnoreRelationship("http://schemas.microsoft.com/office/2006/relationships/recovered");
 
@@ -62,6 +64,8 @@ internal static class PackageStorageExtensions
 
         if (compatLevel == CompatibilityLevel.Version_2_20)
         {
+            package.UseLocking();
+
             // Before v3.0, all parts were eagerly loaded
             package.LoadAllParts();
         }
@@ -95,5 +99,21 @@ internal static class PackageStorageExtensions
     {
         action(package);
         return package;
+    }
+
+    private sealed class DefaultSaveFeature : IPackageSaveFeature
+    {
+        private readonly OpenXmlPackage _package;
+
+        public DefaultSaveFeature(OpenXmlPackage package)
+        {
+            _package = package;
+        }
+
+        public void Save()
+        {
+            _package.SavePartContents(true);
+            _package.Features.GetRequired<IPackageFeature>().Package.Save();
+        }
     }
 }

@@ -1,6 +1,7 @@
 ﻿// Copyright (c) Microsoft. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
+using DocumentFormat.OpenXml.Bibliography;
 using DocumentFormat.OpenXml.Features;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
@@ -91,6 +92,8 @@ namespace DocumentFormat.OpenXml.Tests
             using (var stream = GetStream(TestFiles.Document, true))
             using (var source = WordprocessingDocument.Open(stream, true))
             {
+                source.UseLocking();
+
                 Parallel.For(0, 10, index =>
                 {
                     using (var clone1 = source.Clone())
@@ -133,6 +136,8 @@ namespace DocumentFormat.OpenXml.Tests
             using (var stream = GetStream(TestFiles.Document, true))
             using (var source = WordprocessingDocument.Open(stream, true))
             {
+                source.UseLocking();
+
                 Parallel.For(0, 10, index =>
                 {
                     using (var clone = source.Clone())
@@ -150,6 +155,8 @@ namespace DocumentFormat.OpenXml.Tests
             using (var input = GetStream(TestFiles.Document, true))
             using (var wordDoc = WordprocessingDocument.Open(input, true))
             {
+                wordDoc.UseLocking();
+
                 Parallel.For(0, 10, index =>
                 {
                     using (var clone = wordDoc.Clone())
